@@ -17,21 +17,24 @@ class HeaderDesktop extends StatelessWidget {
         left: 20,
       ),
       decoration: HeaderDecoration,
-      child: Row(
-        children: [
-          HeaderLogo(ontap: () {}),
-          const Spacer(),
-          for (int i = 0; i < nav_titles.length; i++)
-            TextButton(
-                onPressed: () {},
-                child: Text(
-                  nav_titles[i],
-                  style: const TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white),
-                ))
-        ],
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 800),
+        child: Row(
+          children: [
+            HeaderLogo(ontap: () {}),
+            const Spacer(),
+            for (int i = 0; i < nav_titles.length; i++)
+              TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    nav_titles[i],
+                    style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  ))
+          ],
+        ),
       ),
     );
   }

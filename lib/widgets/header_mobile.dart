@@ -17,14 +17,17 @@ class HeaderMobile extends StatelessWidget {
       height: 50,
       margin: const EdgeInsets.only(left: 40, bottom: 0, right: 5, top: 0),
       decoration: HeaderDecoration,
-      child: Row(
-        children: [
-          HeaderLogo(
-            ontap: onlogotap,
-          ),
-          Spacer(),
-          IconButton(onPressed: onMenutap, icon: Icon(Icons.menu))
-        ],
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 900),
+        child: Row(
+          children: [
+            HeaderLogo(
+              ontap: onlogotap,
+            ),
+            const Spacer(),
+            IconButton(onPressed: onMenutap, icon: const Icon(Icons.menu))
+          ],
+        ),
       ),
     );
   }

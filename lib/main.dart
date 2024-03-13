@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfilio/pages/homepage.dart';
 
 void main() {
@@ -11,10 +12,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Al Azad',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark(),
-        home: const HomePage());
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+          title: 'Al Azad',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData.dark(),
+          home: const HomePage()),
+    );
   }
 }
