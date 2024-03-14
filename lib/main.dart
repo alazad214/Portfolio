@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfilio/pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +21,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'Al Azad',
           debugShowCheckedModeBanner: false,
-          theme: ThemeData.dark(),
+          theme: ThemeData(
+            fontFamily: "Anta"
+          ),
           home: const HomePage()),
     );
   }

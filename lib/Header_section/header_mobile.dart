@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../styles/styles.dart';
 import 'header_logo.dart';
 
 class HeaderMobile extends StatelessWidget {
@@ -14,9 +13,12 @@ class HeaderMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      margin: const EdgeInsets.only(left: 40, bottom: 0, right: 5, top: 0),
-      decoration: HeaderDecoration,
+      height: 65,
+      padding: const EdgeInsets.only(left: 20, bottom: 0, right: 10, top: 0),
+      decoration: const BoxDecoration(
+          color: Colors.black54,
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8))),
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 900),
         child: Row(
@@ -25,7 +27,12 @@ class HeaderMobile extends StatelessWidget {
               ontap: onlogotap,
             ),
             const Spacer(),
-            IconButton(onPressed: onMenutap, icon: const Icon(Icons.menu))
+            IconButton(
+                onPressed: onMenutap,
+                icon: const Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                )),
           ],
         ),
       ),

@@ -9,17 +9,15 @@ class MainMobile extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-      margin: const EdgeInsets.symmetric(
-        horizontal: 40.0,
-        vertical: 30.0,
-      ),
-      height: screenSize.height/3,
-      constraints: const BoxConstraints(minHeight: 560),
+
+      decoration: BoxDecoration(
+          color: Colors.black54, borderRadius: BorderRadius.circular(8)),
+      constraints: const BoxConstraints(minHeight: 450),
       child: Column(
         children: [
           Image.asset(
-            "assets/image/developer.png",
-            width: screenWidth,
+            "assets/image/azad_bg.png",
+            width: screenWidth / 2,
           ),
           const SizedBox(height: 20),
           const Text(
@@ -34,7 +32,7 @@ class MainMobile extends StatelessWidget {
           ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                backgroundColor: MaterialStateProperty.all(Colors.yellow)),
             child: const Text("Download Resume"),
           )
         ],

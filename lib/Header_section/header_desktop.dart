@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfilio/styles/styles.dart';
-import 'package:my_portfilio/widgets/header_logo.dart';
+
+import 'package:my_portfilio/Header_section/header_logo.dart';
 
 import '../constants/nav_item.dart';
 
@@ -11,14 +11,17 @@ class HeaderDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
-      width: double.maxFinite,
-      margin: const EdgeInsets.only(
-        left: 20,
-      ),
-      decoration: HeaderDecoration,
+      height: 70,
+      margin: const EdgeInsets.symmetric(horizontal: 80),
+      padding: const EdgeInsets.only(left: 30),
+      decoration: const BoxDecoration(
+          color: Colors.black54,
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8))),
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 800),
+        constraints: const BoxConstraints(
+          maxWidth: 800,
+        ),
         child: Row(
           children: [
             HeaderLogo(ontap: () {}),

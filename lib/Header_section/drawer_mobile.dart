@@ -9,15 +9,21 @@ class DrawerMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: CustomColor.scaffoldBg,
+      backgroundColor: AppColor.color_3,
       child: ListView(children: [
         const SizedBox(height: 20),
         Align(
-          child: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(Icons.close)),
+          child: Container(
+            decoration: BoxDecoration(
+              color:  Colors.white70,
+              borderRadius: BorderRadius.circular(100)
+            ),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(Icons.close)),
+          )
         ),
         for (int i = 0; i < nav_icons.length; i++)
           Padding(
@@ -28,7 +34,7 @@ class DrawerMobile extends StatelessWidget {
                 fontSize: 16,
               ),
               contentPadding: const EdgeInsets.all(5),
-              leading: Icon(nav_icons[i]),
+              leading: Icon(nav_icons[i],color: Colors.white,),
               title: Text(nav_titles[i]),
             ),
           )

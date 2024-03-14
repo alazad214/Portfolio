@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfilio/constants/project_item.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Project_Card extends StatelessWidget {
-  const Project_Card({super.key, required this.project});
+  Project_Card({super.key, required this.project});
   final ProjectUtils project;
+  final Uri _url = Uri.parse('https://flutter.dev');
 
   @override
   Widget build(BuildContext context) {
@@ -57,20 +59,25 @@ class Project_Card extends StatelessWidget {
               children: [
                 Expanded(
                     child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
+                        onPressed: () async {
+                          final Uri url = Uri.parse(project.url.toString());
+                          if (!await launchUrl(url)) {
+                            throw Exception('Could not launch $url');
+                          }
+                        },
+                        child: const Text(
                           'source',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ))),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Expanded(
                     child: ElevatedButton(
                         onPressed: () {},
-                        child: Text(
-                          'source',
+                        child: const Text(
+                          'preview',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ))),

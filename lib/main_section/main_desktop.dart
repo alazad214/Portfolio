@@ -9,9 +9,12 @@ class MainDesktop extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20.0),
+      margin: const EdgeInsets.symmetric(horizontal: 80.0),
       height: screenSize.height / 2,
-      constraints: const BoxConstraints(minHeight: 350.0,maxWidth: 900),
+      decoration: BoxDecoration(
+          color: Colors.black54, 
+          borderRadius: BorderRadius.circular(8)),
+      constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 900),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -30,14 +33,15 @@ class MainDesktop extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                    backgroundColor: MaterialStateProperty.all(Colors.yellow)),
                 child: const Text("Download Resume"),
               )
             ],
           ),
           Image.asset(
-            "assets/image/developer.png",
-            width: screenWidth / 2,
+            "assets/image/azad_bg.png",
+            width: screenWidth / 4,
+            height: screenSize.height / 2,
           )
         ],
       ),

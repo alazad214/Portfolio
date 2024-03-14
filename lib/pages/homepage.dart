@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfilio/constants/colors.dart';
-import 'package:my_portfilio/constants/nav_item.dart';
-import 'package:my_portfilio/constants/platform.dart';
-import 'package:my_portfilio/constants/project_item.dart';
-import 'package:my_portfilio/styles/styles.dart';
-import 'package:my_portfilio/widgets/drawer_mobile.dart';
-import 'package:my_portfilio/widgets/header_desktop.dart';
-import 'package:my_portfilio/widgets/header_logo.dart';
-import 'package:my_portfilio/widgets/header_mobile.dart';
-import 'package:my_portfilio/widgets/main_desktop.dart';
-import 'package:my_portfilio/widgets/main_mobile.dart';
-import 'package:my_portfilio/widgets/project_card.dart';
-import 'package:my_portfilio/widgets/project_section.dart';
-import 'package:my_portfilio/widgets/skills.dart';
+
+import 'package:my_portfilio/Header_section/drawer_mobile.dart';
+import 'package:my_portfilio/Header_section/header_desktop.dart';
+import 'package:my_portfilio/Header_section/header_logo.dart';
+import 'package:my_portfilio/Header_section/header_mobile.dart';
+import 'package:my_portfilio/main_section/main_desktop.dart';
+import 'package:my_portfilio/main_section/main_mobile.dart';
+
+import 'package:my_portfilio/project_section/project_desktop.dart';
+import 'package:my_portfilio/project_section/project_mobile.dart';
+
+import 'package:my_portfilio/skills_section/skills_desktop.dart';
+import 'package:my_portfilio/skills_section/skills_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,14 +31,14 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constaints) {
       return Scaffold(
         key: scafoldkey,
-        backgroundColor: CustomColor.scaffoldBg,
+        backgroundColor: AppColor.denim_2,
         endDrawer: constaints.maxWidth >= 550 ? null : DrawerMobile(),
         body: SafeArea(
           child: ListView(
             scrollDirection: Axis.vertical,
             children: [
               //Header---------------->>
-              if (constaints.maxWidth >= 550)
+              /*  if (constaints.maxWidth >= 650)
                 const HeaderDesktop()
               else
                 HeaderMobile(
@@ -46,31 +46,63 @@ class _HomePageState extends State<HomePage> {
                     onMenutap: () {
                       scafoldkey.currentState!.openEndDrawer();
                     }),
+              const SizedBox(
+                height: 20,
+              ),
               //Main------------------>>
-              if (constaints.maxWidth >= 550)
+              if (constaints.maxWidth >= 650)
                 const MainDesktop()
               else
                 const MainMobile(),
-
+              const SizedBox(
+                height: 20,
+              ),
               //Skills---------------->>
-              const Skills(),
+              if (constaints.maxWidth >= 650)
+                Skills_desktop()
+              else
+                Skills_Mobile(),
 
               const SizedBox(height: 20),
               //projects-------------->>
-              const Project_secTion(),
-
-              //contract---------------->>
+              if (constaints.maxWidth >= 650)
+                Project_Desktop()
+              else
+                Project_mobile(),
+              const SizedBox(height: 20),
+              //contract---------------->>*/
               Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
+                alignment: Alignment.center,
+                width: screenWidth,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    color: Colors.black54,
+                    borderRadius: BorderRadius.circular(8)),
+                child: Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    for(int i=0; i<5; i++)
+                    Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(100),
+                          border: Border.all(width: 2, color: Colors.white60)),
+                      child: Image.asset("assets/contact/fb.png"),
+                    )
+                  ],
+                ),
               ),
 
               //footer------------------------------------------------------------>
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
+              Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 20),
+                child: Container(
+                  alignment: Alignment.center,
+                  width: double.maxFinite,
+                  child: const Text("Made By - Al Azad 😍"),
+                ),
               ),
             ],
           ),
