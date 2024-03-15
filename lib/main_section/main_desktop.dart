@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key});
+  const MainDesktop({super.key, });
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +16,7 @@ class MainDesktop extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 80.0),
       height: screenSize.height / 2,
       decoration: BoxDecoration(
-          color: Colors.black54, 
-          borderRadius: BorderRadius.circular(8)),
+          color: Colors.black54, borderRadius: BorderRadius.circular(8)),
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 900),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -31,7 +34,13 @@ class MainDesktop extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  final Uri url = Uri.parse(
+                      "https://drive.google.com/file/d/15A1loQIDhPR6eoBz4Cz8ldnDtOOk-VfQ/view?usp=drive_link");
+                  if (!await launchUrl(url)) {
+                    throw Exception('Could not launch $url');
+                  }
+                },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.yellow)),
                 child: const Text("Download Resume"),

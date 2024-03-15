@@ -14,10 +14,10 @@ class HeaderDesktop extends StatelessWidget {
       height: 70,
       margin: const EdgeInsets.symmetric(horizontal: 80),
       padding: const EdgeInsets.only(left: 30),
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
           color: Colors.black54,
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8))),
+        borderRadius: BorderRadius.circular(8)
+          ),
       child: ConstrainedBox(
         constraints: const BoxConstraints(
           maxWidth: 800,

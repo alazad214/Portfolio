@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_portfilio/pages/homepage.dart';
+import 'package:my_portfilio/pages/splash.dart';
 
 void main() {
   runApp(const MyApp());
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,17 +14,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: MaterialApp(
-          title: 'Al Azad',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            fontFamily: "Anta"
-          ),
-          home: const HomePage()),
-    );
+    return MaterialApp(
+        title: 'Al Azad',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: "Anta"),
+        home: const Splash());
   }
 }

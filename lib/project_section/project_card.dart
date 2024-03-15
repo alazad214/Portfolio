@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Project_Card extends StatelessWidget {
   Project_Card({super.key, required this.project});
   final ProjectUtils project;
-  final Uri _url = Uri.parse('https://flutter.dev');
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,20 +28,20 @@ class Project_Card extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 0),
+            padding: const EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 0),
             child: Text(
               project.title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
+                  const TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 10, left: 10, top: 3, bottom: 5),
+            padding: const EdgeInsets.only(right: 10, left: 10, top: 3, bottom: 5),
             child: Text(
               project.subtitle,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black87,
                 fontSize: 12,
               ),

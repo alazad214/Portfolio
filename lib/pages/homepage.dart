@@ -1,17 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
 import 'package:my_portfilio/constants/colors.dart';
-
 import 'package:my_portfilio/Header_section/drawer_mobile.dart';
 import 'package:my_portfilio/Header_section/header_desktop.dart';
-import 'package:my_portfilio/Header_section/header_logo.dart';
 import 'package:my_portfilio/Header_section/header_mobile.dart';
+import 'package:my_portfilio/contact_section/contact_desktop.dart';
+import 'package:my_portfilio/contact_section/contact_mobile.dart';
+import 'package:my_portfilio/footer_section/footer_.dart';
 import 'package:my_portfilio/main_section/main_desktop.dart';
 import 'package:my_portfilio/main_section/main_mobile.dart';
-
 import 'package:my_portfilio/project_section/project_desktop.dart';
 import 'package:my_portfilio/project_section/project_mobile.dart';
-
 import 'package:my_portfilio/skills_section/skills_desktop.dart';
 import 'package:my_portfilio/skills_section/skills_mobile.dart';
 
@@ -24,90 +24,97 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scafoldkey = GlobalKey<ScaffoldState>();
+
+  Exit(context) {
+    showDialog(
+        context: context,
+        builder: (_) {
+          return CupertinoAlertDialog(
+            title: const Text('Do you want to exit Application'),
+            content: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                OutlinedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text("No")),
+                const SizedBox(
+                  width: 30,
+                ),
+                OutlinedButton(
+                    onPressed: () {
+                      SystemNavigator.pop();
+                    },
+                    child: const Text("Yes")),
+              ],
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
-    return LayoutBuilder(builder: (context, constaints) {
-      return Scaffold(
-        key: scafoldkey,
-        backgroundColor: AppColor.denim_2,
-        endDrawer: constaints.maxWidth >= 550 ? null : DrawerMobile(),
-        body: SafeArea(
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: [
-              //Header---------------->>
-              /*  if (constaints.maxWidth >= 650)
-                const HeaderDesktop()
-              else
-                HeaderMobile(
-                    onlogotap: () {},
-                    onMenutap: () {
-                      scafoldkey.currentState!.openEndDrawer();
-                    }),
-              const SizedBox(
-                height: 20,
-              ),
-              //Main------------------>>
-              if (constaints.maxWidth >= 650)
-                const MainDesktop()
-              else
-                const MainMobile(),
-              const SizedBox(
-                height: 20,
-              ),
-              //Skills---------------->>
-              if (constaints.maxWidth >= 650)
-                Skills_desktop()
-              else
-                Skills_Mobile(),
-
-              const SizedBox(height: 20),
-              //projects-------------->>
-              if (constaints.maxWidth >= 650)
-                Project_Desktop()
-              else
-                Project_mobile(),
-              const SizedBox(height: 20),
-              //contract---------------->>*/
-              Container(
-                alignment: Alignment.center,
-                width: screenWidth,
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: Colors.black54,
-                    borderRadius: BorderRadius.circular(8)),
-                child: Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    for(int i=0; i<5; i++)
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(100),
-                          border: Border.all(width: 2, color: Colors.white60)),
-                      child: Image.asset("assets/contact/fb.png"),
-                    )
-                  ],
+    return WillPopScope(
+      onWillPop: () {
+        Exit(context);
+        return Future.value(false);
+      },
+      child: LayoutBuilder(builder: (context, constaints) {
+        return Scaffold(
+          key: scafoldkey,
+          backgroundColor: AppColor.navy_,
+          endDrawer: constaints.maxWidth >= 550 ? null : const DrawerMobile(),
+          body: SafeArea(
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-
-              //footer------------------------------------------------------------>
-              Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 20),
-                child: Container(
-                  alignment: Alignment.center,
-                  width: double.maxFinite,
-                  child: const Text("Made By - Al Azad 😍"),
+                //Header---------------->>
+                if (constaints.maxWidth >= 650)
+                  const HeaderDesktop()
+                else
+                  HeaderMobile(onMenutap: () {
+                    scafoldkey.currentState!.openEndDrawer();
+                  }),
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-            ],
+                //Main------------------>>
+                if (constaints.maxWidth >= 650) MainDesktop() else MainMobile(),
+                const SizedBox(
+                  height: 20,
+                ),
+                //Skills---------------->>
+                if (constaints.maxWidth >= 650)
+                  const Skills_desktop()
+                else
+                  const Skills_Mobile(),
+
+                const SizedBox(height: 20),
+                //projects-------------->>
+                if (constaints.maxWidth >= 650)
+                  const Project_Desktop()
+                else
+                  const Project_mobile(),
+                const SizedBox(height: 20),
+                //contract---------------->>
+                if (constaints.maxWidth >= 650)
+                  Contact_desktop()
+                else
+                  const Contact_mobile(),
+
+                //footer---------->
+                const Footer_section()
+              ],
+            ),
           ),
-        ),
-      );
-    });
+        );
+      }),
+    );
   }
 }
