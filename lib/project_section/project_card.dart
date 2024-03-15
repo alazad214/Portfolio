@@ -12,7 +12,7 @@ class Project_Card extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-      height: 330,
+      height: 300,
       width: 270,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
@@ -21,11 +21,18 @@ class Project_Card extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            project.image,
-            height: 140,
-            width: 270,
-            fit: BoxFit.cover,
+          Container(
+            clipBehavior: Clip.antiAlias,
+            margin: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5)
+            ),
+            child: Image.asset(
+              project.image,
+              height: 140,
+              width: 270,
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 0),
@@ -60,7 +67,7 @@ class Project_Card extends StatelessWidget {
                 Expanded(
                     child: ElevatedButton(
                         onPressed: () async {
-                          final Uri url = Uri.parse(project.url.toString());
+                          final Uri url = Uri.parse(project.source.toString());
                           if (!await launchUrl(url)) {
                             throw Exception('Could not launch $url');
                           }
