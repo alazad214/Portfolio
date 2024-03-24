@@ -6,13 +6,12 @@ class Project_Card extends StatelessWidget {
   Project_Card({super.key, required this.project});
   final ProjectUtils project;
 
-
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-      height: 300,
+      height: 350,
       width: 270,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
@@ -24,9 +23,7 @@ class Project_Card extends StatelessWidget {
           Container(
             clipBehavior: Clip.antiAlias,
             margin: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5)
-            ),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
             child: Image.asset(
               project.image,
               height: 140,
@@ -35,17 +32,19 @@ class Project_Card extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 0),
+            padding:
+                const EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 0),
             child: Text(
               project.title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style:
-                  const TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
+              style: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.w800),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 10, left: 10, top: 3, bottom: 5),
+            padding:
+                const EdgeInsets.only(right: 10, left: 10, top: 3, bottom: 5),
             child: Text(
               project.subtitle,
               style: const TextStyle(
@@ -82,7 +81,12 @@ class Project_Card extends StatelessWidget {
                 ),
                 Expanded(
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          final Uri url = Uri.parse(project.preview.toString());
+                          if (!await launchUrl(url)) {
+                            throw Exception('Could not launch $url');
+                          }
+                        },
                         child: const Text(
                           'preview',
                           maxLines: 1,

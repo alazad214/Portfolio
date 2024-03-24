@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:my_portfilio/Header_section/header_logo.dart';
+import 'package:my_portfilio/project_section/project_desktop.dart';
 
 import '../constants/nav_item.dart';
 
@@ -14,10 +15,8 @@ class HeaderDesktop extends StatelessWidget {
       height: 70,
       margin: const EdgeInsets.symmetric(horizontal: 80),
       padding: const EdgeInsets.only(left: 30),
-      decoration:  BoxDecoration(
-          color: Colors.black54,
-        borderRadius: BorderRadius.circular(8)
-          ),
+      decoration: BoxDecoration(
+          color: Colors.black54, borderRadius: BorderRadius.circular(8)),
       child: ConstrainedBox(
         constraints: const BoxConstraints(
           maxWidth: 800,
@@ -28,7 +27,9 @@ class HeaderDesktop extends StatelessWidget {
             const Spacer(),
             for (int i = 0; i < nav_titles.length; i++)
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: Text(
                     nav_titles[i],
                     style: const TextStyle(
