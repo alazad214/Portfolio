@@ -39,12 +39,13 @@ dependencies:
   animated_text_kit: ^4.2.2
   lottie: ^3.1.0
   get: ^4.6.6
+  carousel_slider: ^4.2.1
   firebase_core: ^2.27.0
   firebase_auth: ^4.17.8
   firebase_storage: ^11.6.9
   cloud_firestore: ^4.15.8
   firebase_messaging: ^14.7.19
-  carousel_slider: ^4.2.1
+
 
 dev_dependencies:
   flutter_test:
@@ -93,8 +94,8 @@ flutter:
   assets:
     - assets/image/
     - assets/platform_image/
-    - assets/skills_image/
     - assets/project_image/
+    - assets/skills_image/
     - assets/contact/
     - assets/animation/
     - assets/fonts/Anta.ttf

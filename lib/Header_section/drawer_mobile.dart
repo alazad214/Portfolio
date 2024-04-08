@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants/colors.dart';
 import '../constants/nav_item.dart';
@@ -25,7 +26,8 @@ class DrawerMobile extends StatelessWidget {
         for (int i = 0; i < nav_icons.length; i++)
           InkWell(
             onTap: () {
-
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => nav_pages[i]));
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 25),

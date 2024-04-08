@@ -37,11 +37,12 @@ List<ProjectUtils> workProjectUtils = [
   ProjectUtils(
     image: 'assets/project_image/uidesing.png',
     title: 'Flutter Responsive UI ',
-    subtitle: 'This application is made with Flutter.This app is designed responsively.',
+    subtitle:
+        'This application is made with Flutter.This app is designed responsively.',
     source: 'https://github.com/alazad214/ui_project1',
-    preview: 'https://drive.google.com/file/d/114KbukknA1NmB0Gv8MBkDlRh_rT8-8GG/view?usp=sharing',
+    preview:
+        'https://drive.google.com/file/d/114KbukknA1NmB0Gv8MBkDlRh_rT8-8GG/view?usp=sharing',
   ),
-
   ProjectUtils(
     image: 'assets/project_image/newsapp.jpg',
     title: 'News App',

@@ -28,7 +28,8 @@ class HeaderDesktop extends StatelessWidget {
             for (int i = 0; i < nav_titles.length; i++)
               TextButton(
                   onPressed: () {
-
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => nav_pages[i]));
                   },
                   child: Text(
                     nav_titles[i],

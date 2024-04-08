@@ -1,26 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfilio/contact_section/contact_desktop.dart';
-import 'package:my_portfilio/contact_section/contact_mobile.dart';
-import 'package:my_portfilio/main_section/main_desktop.dart';
-import 'package:my_portfilio/main_section/main_mobile.dart';
-import 'package:my_portfilio/project_section/project_desktop.dart';
-import 'package:my_portfilio/project_section/project_mobile.dart';
-import 'package:my_portfilio/skills_section/skills_desktop.dart';
-import 'package:my_portfilio/skills_section/skills_mobile.dart';
+import 'package:my_portfilio/pages/blogs.dart';
+import 'package:my_portfilio/pages/homepage.dart';
+import 'package:my_portfilio/pages/user_message.dart';
 
-List<String> nav_titles = [
-  "Home",
-  "Skills",
-  "Projects",
-  "Contact",
-  "Blog",
+List<String> nav_titles = ["Home", "Blog", "Message"];
+List<IconData> nav_icons = [Icons.home, Icons.web, Icons.message_outlined];
+List nav_pages = [
+  HomePage(),
+  Blogs_page(),
+  User_Message(),
 ];
-List<IconData> nav_icons = [
-  Icons.home,
-  Icons.android,
-  Icons.work,
-  Icons.phone_iphone_sharp,
-  Icons.web
-];
-

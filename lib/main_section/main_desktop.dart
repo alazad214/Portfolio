@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key, });
-
-
+  const MainDesktop({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
