@@ -34,7 +34,7 @@ class MainMobile extends StatelessWidget {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () async{
-              final Uri url = Uri.parse("https://drive.google.com/file/d/15A1loQIDhPR6eoBz4Cz8ldnDtOOk-VfQ/view?usp=drive_link");
+              final Uri url = Uri.parse("https://drive.google.com/drive/folders/1WYyG-5oWbxWgctSbz1oF8byaAz63f7Hg?usp=sharing");
               if (!await launchUrl(url)) {
                 throw Exception('Could not launch $url');
               }
