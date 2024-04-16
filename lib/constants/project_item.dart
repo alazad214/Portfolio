@@ -35,19 +35,30 @@ List<ProjectUtils> workProjectUtils = [
         'https://alazadsociallink214.netlify.app/?fbclid=IwAR3bOh0pn1ifEnqMbabBxd6UnNgX7YCWaOE7AGsUqpFedCZ1WwnUSh8v0cA',
   ),
   ProjectUtils(
-    image: 'assets/project_image/uidesing.png',
-    title: 'Flutter Responsive UI ',
+    image: 'assets/project_image/newsapp.png',
+    title: 'News App',
     subtitle:
-        'This application is made with Flutter.This app is designed responsively.',
-    source: 'https://github.com/alazad214/ui_project1',
+        'This news application is developed by Flutter. GetX package, RestAPI, ScreenUtil package etc are all used in it',
+    source: 'https://github.com/alazad214/NewsApp',
     preview:
-        'https://drive.google.com/file/d/114KbukknA1NmB0Gv8MBkDlRh_rT8-8GG/view?usp=sharing',
+        'https://drive.google.com/drive/folders/10yUDVFhWAhNs3gOh3aX4AEK9zBTQLxpq?usp=sharing',
   ),
   ProjectUtils(
-    image: 'assets/project_image/newsapp.jpg',
-    title: 'News App',
-    subtitle: 'This is a News App ',
-    source: 'https://github.com/alazad214/NewsApp',
-    preview: '',
+    image: 'assets/project_image/whatsapp.png',
+    title: 'WhatsApp Clone',
+    subtitle:
+        "This is WhatsApp Clone project created by Flutter. This is a frontend project",
+    source: 'https://github.com/alazad214/whatsapp-clone-',
+    preview:
+        'https://drive.google.com/drive/folders/11L-_xL8niPsIuusDe5LCthJHAS2AkIMN',
+  ),
+  ProjectUtils(
+    image: 'assets/project_image/ecommerceapp.png',
+    title: 'E-commerce App',
+    subtitle:
+        'GetX State Management, Firebase authentication, firebase storage, firebase firestore, Bkash payment gateway etc are used in this e-commerce project.',
+    source: 'https://github.com/alazad214/ecommerce2',
+    preview:
+        'https://drive.google.com/drive/folders/10kFSeU3yPmQ2jeKFC9VFEXO4lwEIrD4Q?usp=sharing',
   ),
 ];

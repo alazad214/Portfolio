@@ -76,10 +76,9 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 //contract---------------->>
                 if (constaints.maxWidth >= 650)
-                  Contact_desktop()
+                  const Contact_desktop()
                 else
                   const Contact_mobile(),
-
                 //footer---------->
                 const Footer_section()
               ],
