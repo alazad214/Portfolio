@@ -61,4 +61,12 @@ List<ProjectUtils> workProjectUtils = [
     preview:
         'https://drive.google.com/drive/folders/10kFSeU3yPmQ2jeKFC9VFEXO4lwEIrD4Q?usp=sharing',
   ),
+  ProjectUtils(
+    image: 'assets/project_image/blogrider_.png',
+    title: 'Blog Rider',
+    subtitle:
+        'This blog rider application is made responsive. It is built for mobile and web platforms.',
+    source: 'https://github.com/alazad214/responsive-blog-application',
+    preview: 'https://blogrider.netlify.app/#/minified:G3',
+  ),
 ];

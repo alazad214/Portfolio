@@ -29,7 +29,6 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
     return LayoutBuilder(builder: (context, constaints) {
       return Scaffold(
         body: SafeArea(
