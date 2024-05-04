@@ -5,7 +5,7 @@ import 'package:my_portfilio/pages/homepage.dart';
 import 'package:my_portfilio/pages/settings_screen.dart';
 import 'package:my_portfilio/user_message/user_message.dart';
 
-List<String> nav_titles = ["Home", "Blog", "Message>", "Settings"];
+List<String> nav_titles = ["Home", "Blog", "Contact", "Settings"];
 List<IconData> nav_icons = [
   Icons.home,
   Icons.web,
