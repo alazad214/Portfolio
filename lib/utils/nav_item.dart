@@ -15,6 +15,6 @@ List<IconData> nav_icons = [
 List nav_pages = [
   const HomePage(),
   const Blogs_page(),
-  User_Message(),
+  UserMessage(),
   const Settings_Screen()
 ];

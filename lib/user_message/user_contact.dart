@@ -23,7 +23,7 @@ class UserContact extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: CircleAvatar(
-                child: Image.asset(contactImage[i]["image"].toString()),
+                child: Image.asset(contactImage[i]["img"].toString()),
               ),
             ),
           )

@@ -1,20 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
-class TextMessageController extends GetxController {
-  RxString email = RxString("");
-  RxString sendMessage = RxString("");
-
-  final auth = FirebaseAuth.instance;
+class Message_Controller extends GetxController {
+  RxString message = RxString("");
 
   SendMessage() async {
     await FirebaseFirestore.instance
-        .collection("messages")
-        .doc(email.value)
+        .collection("Messages")
+        .doc(message.value)
         .collection("message")
-        .add({"email": email.value, "sendmessage": sendMessage.value});
+        .add({"sendmessage": message.value});
     Get.snackbar("succes", "Successfully send message");
   }
 }
