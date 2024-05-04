@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants/contact_item.dart';
+import '../utils/contact_item.dart';
 
 class UserContact extends StatelessWidget {
   const UserContact({super.key});

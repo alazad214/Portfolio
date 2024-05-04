@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfilio/constants/colors.dart';
+import 'package:my_portfilio/utils/colors.dart';
 import 'package:my_portfilio/Header_section/drawer_mobile.dart';
 import 'package:my_portfilio/Header_section/header_desktop.dart';
 import 'package:my_portfilio/Header_section/header_mobile.dart';
-import 'package:my_portfilio/constants/exitapp.dart';
+import 'package:my_portfilio/utils/exitapp.dart';
 import 'package:my_portfilio/contact_section/contact_desktop.dart';
 import 'package:my_portfilio/contact_section/contact_mobile.dart';
 import 'package:my_portfilio/footer_section/footer_.dart';

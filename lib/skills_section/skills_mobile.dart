@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/platform.dart';
+import '../utils/platform.dart';
 
 class Skills_Mobile extends StatelessWidget {
   const Skills_Mobile({super.key});

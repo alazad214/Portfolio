@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:my_portfilio/Header_section/header_logo.dart';
-import 'package:my_portfilio/project_section/project_desktop.dart';
 
-import '../constants/nav_item.dart';
+
+import '../utils/nav_item.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({super.key});

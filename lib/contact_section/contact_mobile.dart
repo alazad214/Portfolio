@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants/contact_item.dart';
+import '../utils/contact_item.dart';
 
 class Contact_mobile extends StatelessWidget {
   const Contact_mobile({super.key});

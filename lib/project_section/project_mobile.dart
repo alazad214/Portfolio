@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfilio/project_section/project_card.dart';
 
-import '../constants/project_item.dart';
+import '../utils/project_item.dart';
 
 
 class Project_mobile extends StatelessWidget {

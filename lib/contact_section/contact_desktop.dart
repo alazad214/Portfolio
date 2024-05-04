@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants/contact_item.dart';
+import '../utils/contact_item.dart';
 
 class Contact_desktop extends StatelessWidget {
   const Contact_desktop({

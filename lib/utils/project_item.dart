@@ -31,8 +31,7 @@ List<ProjectUtils> workProjectUtils = [
   ProjectUtils(
     image: 'assets/project_image/whatsapp.png',
     title: 'WhatsApp Clone',
-    subtitle:
-        "This is WhatsApp UI clone project created by Flutter.",
+    subtitle: "This is WhatsApp UI clone project created by Flutter.",
     source: 'https://github.com/alazad214/whatsapp-clone-',
     preview:
         'https://drive.google.com/drive/folders/15f5lLGETOVfzQ5roz5PD6lwBF4UosWHS?usp=sharing',

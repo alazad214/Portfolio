@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/colors.dart';
-import '../constants/nav_item.dart';
+import '../utils/colors.dart';
+import '../utils/nav_item.dart';
 
 class DrawerMobile extends StatelessWidget {
   const DrawerMobile({super.key});

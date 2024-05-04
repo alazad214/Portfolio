@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfilio/constants/project_item.dart';
+import 'package:my_portfilio/utils/project_item.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Project_Card extends StatelessWidget {
