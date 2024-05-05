@@ -14,7 +14,10 @@ class BlogDesktop extends StatelessWidget {
         children: [
           SizedBox(
             width: 600,
-            child: Custom_Card(height: 350,imageheight: 280,),
+            child: Custom_Card(
+              height: 350.0,
+              imageheight: 280.0,
+            ),
           ),
         ],
       ),

@@ -8,8 +8,8 @@ import '../utils/blog_item.dart';
 
 class Custom_Card extends StatelessWidget {
   Custom_Card({super.key, this.height, this.imageheight});
-  final height;
-  final imageheight;
+  final double? height;
+  final double? imageheight;
 
   final controller = Get.put(BlogController());
   @override

@@ -7,7 +7,7 @@ class BlogMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Custom_Card(height: 220,)],
+      children: [Custom_Card(height: 220.0,)],
     );
   }
 }
