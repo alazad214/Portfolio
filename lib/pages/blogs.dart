@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfilio/widgets/blog_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Blogs_page extends StatelessWidget {
@@ -7,27 +8,14 @@ class Blogs_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Center(
+      appBar: AppBar(
+        title: const Text("B L O G S"),
+        titleSpacing: 0,
+      ),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: ElevatedButton(
-                  onPressed: () async {
-                    final Uri url =
-                    Uri.parse("https://blogrider.netlify.app/#/minified:G3");
-                    if (!await launchUrl(url)) {
-                      throw Exception('Could not launch $url');
-                    }
-                  },
-                  child: const Text(
-                    'source',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  )),
-            )
-          ],
+          children: [Custom_Card()],
         ),
       ),
     );

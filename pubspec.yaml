@@ -96,6 +96,7 @@ flutter:
     - assets/platform_image/
     - assets/project_image/
     - assets/skills_image/
+    - assets/blog_image/
     - assets/contact/
     - assets/animation/
     - assets/fonts/Anta.ttf
