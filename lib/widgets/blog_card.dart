@@ -7,7 +7,10 @@ import 'package:my_portfilio/pages/blog_details.dart';
 import '../utils/blog_item.dart';
 
 class Custom_Card extends StatelessWidget {
-  Custom_Card({super.key});
+  Custom_Card({super.key, this.height, this.imageheight});
+  final height;
+  final imageheight;
+
   final controller = Get.put(BlogController());
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class Custom_Card extends StatelessWidget {
                     Get.to(DetailsScreen(data: data));
                   },
                   child: Container(
-                    height: 220,
+                    height: height,
                     width: 300,
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
@@ -41,7 +44,7 @@ class Custom_Card extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: 150,
+                            height: imageheight??150,
                             width: double.infinity,
                             child: Image.asset(
                               data["image"],

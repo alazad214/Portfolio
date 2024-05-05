@@ -13,8 +13,9 @@ class HeaderLogo extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
         ),
         child: const Text(
-          "Portfolio..",
-          style: TextStyle(fontSize: 16,color: Colors.white, fontWeight: FontWeight.bold),
+          "Portfolio...",
+          style: TextStyle(
+              fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),
         ));
   }
 }
