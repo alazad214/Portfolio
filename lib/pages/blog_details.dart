@@ -23,7 +23,7 @@ class DetailsScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Center(
             child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 1200),
+              constraints: const BoxConstraints(maxWidth: 700),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

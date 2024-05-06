@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:my_portfilio/pages/splash.dart';
+import 'package:my_portfilio/utils/theme_data.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -26,7 +27,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         title: 'Al Azad',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: "Anta"),
+        theme: darkTheme,
+        darkTheme: lightTheme,
+        themeMode: ThemeMode.system,
         home: const Splash());
   }
 }

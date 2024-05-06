@@ -7,20 +7,15 @@ class BlogDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: 600,
+    return LayoutBuilder(builder: (context, constaints) {
+      return Center(
+        child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 450),
             child: Custom_Card(
-              height: 350.0,
-              imageheight: 280.0,
-            ),
-          ),
-        ],
-      ),
-    );
+              imageheight: 250,
+              height: 320,
+            )),
+      );
+    });
   }
 }

@@ -56,6 +56,14 @@ class UserMessage extends StatelessWidget {
                 const messageMobile(),
               const SizedBox(height: 20),
               const UserContact(),
+              const SizedBox(height: 20),
+              const Text(
+                "Developed with Flutter-Web",
+                style: TextStyle(
+                  color: Colors.lightBlueAccent,
+                  fontSize: 15,
+                ),
+              ),
             ],
           ),
         ),

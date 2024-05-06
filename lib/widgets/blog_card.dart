@@ -18,56 +18,54 @@ class Custom_Card extends StatelessWidget {
       runSpacing: 20,
       spacing: 20,
       children: [
-        SizedBox(
-          child: ListView.builder(
-              itemCount: controller.Blog_Item.length,
-              primary: false,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              itemBuilder: (_, index) {
-                final data = controller.Blog_Item[index];
-                return InkWell(
-                  onTap: () {
-                    Get.to(DetailsScreen(data: data));
-                  },
-                  child: Container(
-                    height: height,
-                    width: 300,
+        ListView.builder(
+            itemCount: controller.Blog_Item.length,
+            primary: false,
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            itemBuilder: (_, index) {
+              final data = controller.Blog_Item[index];
+              return InkWell(
+                onTap: () {
+                  Get.to(DetailsScreen(data: data));
+                },
+                child: Container(
+                  height: height,
+                  width: 300,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Card(
                     clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Card(
-                      clipBehavior: Clip.antiAlias,
-                      color: Colors.blue,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: imageheight??150,
-                            width: double.infinity,
-                            child: Image.asset(
-                              data["image"],
-                              fit: BoxFit.cover,
-                            ),
+                    color: Colors.blue,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: imageheight ?? 150,
+                          width: double.infinity,
+                          child: Image.asset(
+                            data["image"],
+                            fit: BoxFit.cover,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 10),
-                            child: Text(
-                              data["title"],
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 5),
+                          child: Text(
+                            data["title"],
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                );
-              }),
-        )
+                ),
+              );
+            })
       ],
     );
   }

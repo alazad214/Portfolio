@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainMobile extends StatelessWidget {
-  const MainMobile({super.key,});
-
+  const MainMobile({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-
       decoration: BoxDecoration(
           color: Colors.black54, borderRadius: BorderRadius.circular(8)),
       constraints: const BoxConstraints(minHeight: 450),
@@ -33,8 +33,9 @@ class MainMobile extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () async{
-              final Uri url = Uri.parse("https://drive.google.com/drive/folders/1WYyG-5oWbxWgctSbz1oF8byaAz63f7Hg?usp=sharing");
+            onPressed: () async {
+              final Uri url = Uri.parse(
+                  "https://drive.google.com/drive/folders/1L_zg1wVp60ObEX-RnmKS6LilEeeIRDt-?usp=sharing");
               if (!await launchUrl(url)) {
                 throw Exception('Could not launch $url');
               }
