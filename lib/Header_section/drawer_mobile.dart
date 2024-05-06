@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../utils/colors.dart';
 import '../utils/nav_item.dart';
 
@@ -42,7 +43,23 @@ class DrawerMobile extends StatelessWidget {
                 title: Text(nav_titles[i]),
               ),
             ),
-          )
+          ),
+        Container(
+          padding: const EdgeInsets.only(left: 30),
+          width: double.maxFinite,
+          child: InkWell(
+            onTap: () async {
+              final Uri url = Uri.parse("https://web.facebook.com/alazad214");
+              if (!await launchUrl(url)) {
+                throw Exception('Could not launch $url');
+              }
+            },
+            child: const Text(
+              "Made By - Al Azad 😍",
+              style: TextStyle(fontSize: 15, color: Colors.amberAccent),
+            ),
+          ),
+        ),
       ]),
     );
   }
