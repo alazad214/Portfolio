@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfilio/Header_section/header_logo.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/nav_item.dart';
+import '../widgets/others_project.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({super.key});
@@ -36,7 +37,7 @@ class HeaderDesktop extends StatelessWidget {
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
                         color: Colors.white),
-                  ))
+                  )),
           ],
         ),
       ),

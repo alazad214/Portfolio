@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfilio/widgets/others_project.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../utils/colors.dart';
 import '../utils/nav_item.dart';
@@ -44,20 +45,14 @@ class DrawerMobile extends StatelessWidget {
               ),
             ),
           ),
+        const OthersProject(),
+        const SizedBox(height: 10),
         Container(
           padding: const EdgeInsets.only(left: 30),
           width: double.maxFinite,
-          child: InkWell(
-            onTap: () async {
-              final Uri url = Uri.parse("https://web.facebook.com/alazad214");
-              if (!await launchUrl(url)) {
-                throw Exception('Could not launch $url');
-              }
-            },
-            child: const Text(
-              "Made By - Al Azad 😍",
-              style: TextStyle(fontSize: 15, color: Colors.amberAccent),
-            ),
+          child: const Text(
+            "Developed with-Flutter Web",
+            style: TextStyle(fontSize: 12, color: Colors.amberAccent),
           ),
         ),
       ]),

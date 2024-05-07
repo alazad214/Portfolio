@@ -11,24 +11,21 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: 'Al Azad',
         debugShowCheckedModeBanner: false,
-        theme: darkTheme,
-        darkTheme: lightTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
         themeMode: ThemeMode.system,
         home: const Splash());
   }
