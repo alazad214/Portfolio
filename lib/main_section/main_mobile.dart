@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
+import '../utils/colors.dart';
+
 class MainMobile extends StatelessWidget {
   const MainMobile({
     super.key,
@@ -13,8 +15,9 @@ class MainMobile extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
+      width: screenWidth,
       decoration: BoxDecoration(
-          color: Colors.black54, borderRadius: BorderRadius.circular(8)),
+          color: AppColor.navy2, borderRadius: BorderRadius.circular(8)),
       constraints: const BoxConstraints(minHeight: 450),
       child: Column(
         children: [

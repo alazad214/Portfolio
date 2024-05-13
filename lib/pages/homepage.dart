@@ -14,6 +14,7 @@ import 'package:my_portfilio/project_section/project_mobile.dart';
 import 'package:my_portfilio/skills_section/skills_desktop.dart';
 import 'package:my_portfilio/skills_section/skills_mobile.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -23,6 +24,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scafoldkey = GlobalKey<ScaffoldState>();
+  final scrollcontroller = ScrollController();
+  final List<GlobalKey> navBarKey = List.generate(4, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -34,58 +37,104 @@ class _HomePageState extends State<HomePage> {
       child: LayoutBuilder(builder: (context, constaints) {
         return Scaffold(
           key: scafoldkey,
-          backgroundColor: AppColor.navy_,
-          endDrawer: constaints.maxWidth >= 550 ? null : const DrawerMobile(),
+          backgroundColor: AppColor.bgcolor,
+          endDrawer: constaints.maxWidth >= 650
+              ? null
+              : DrawerMobile(onItemTap: (int navIndex) {
+                  scafoldkey.currentState!.closeEndDrawer();
+                  scrollToSection(navIndex);
+                }),
           body: SafeArea(
-            child: ListView(
+            child: SingleChildScrollView(
+              controller: scrollcontroller,
               scrollDirection: Axis.vertical,
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                //Header---------------->>
-                if (constaints.maxWidth >= 650)
-                  const HeaderDesktop()
-                else
-                  HeaderMobile(onMenutap: () {
-                    scafoldkey.currentState!.openEndDrawer();
-                  }),
-                const SizedBox(
-                  height: 20,
-                ),
-                //Main------------------>>
-                if (constaints.maxWidth >= 650)
-                  const MainDesktop()
-                else
-                  const MainMobile(),
-                const SizedBox(
-                  height: 20,
-                ),
-                //Skills---------------->>
-                if (constaints.maxWidth >= 650)
-                  const Skills_desktop()
-                else
-                  const Skills_Mobile(),
+              child: Column(
+                children: [
+                  SizedBox(
+                    key: navBarKey.first,
+                    height: 20,
+                  ),
+                  //HEADER===>>
+                  if (constaints.maxWidth >= 650)
+                    HeaderDesktop(
+                      onNavMenuTap: (int navIndex) {
+                        scrollToSection(navIndex);
+                      },
+                    )
+                  else
+                    HeaderMobile(onMenutap: () {
+                      scafoldkey.currentState!.openEndDrawer();
+                    }),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  //MAIN SECTION===>>
+                  if (constaints.maxWidth >= 650)
+                    const MainDesktop()
+                  else
+                    const MainMobile(),
+                  const SizedBox(
+                    height: 20,
+                  ),
 
-                const SizedBox(height: 20),
-                //projects-------------->>
-                if (constaints.maxWidth >= 650)
-                  const Project_Desktop()
-                else
-                  const Project_mobile(),
-                const SizedBox(height: 20),
-                //contract---------------->>
-                if (constaints.maxWidth >= 650)
-                  const Contact_desktop()
-                else
-                  const Contact_mobile(),
-                //footer---------->
-                const Footer_section()
-              ],
+                  //SKILLS SECTION===>>
+                  Container(
+                    key: navBarKey[1],
+                    child: Column(
+                      children: [
+                        if (constaints.maxWidth >= 650)
+                          const Skills_desktop()
+                        else
+                          const Skills_Mobile(),
+                        const SizedBox(height: 20),
+                      ],
+                    ),
+                  ),
+
+                  //PROJECTS SECTION===>>
+                  Container(
+                    key: navBarKey[2],
+                    child: Column(
+                      children: [
+                        if (constaints.maxWidth >= 650)
+                          const Project_Desktop()
+                        else
+                          const Project_mobile(),
+                        const SizedBox(height: 20),
+                      ],
+                    ),
+                  ),
+
+                  //CONTACT SECTION===>>
+                  Container(
+                    key: navBarKey[3],
+                    child: Column(
+                      children: [
+                        if (constaints.maxWidth >= 650)
+                          const Contact_desktop()
+                        else
+                          const Contact_mobile(),
+                      ],
+                    ),
+                  ),
+
+                  //footer---------->
+                  const Footer_section()
+                ],
+              ),
             ),
           ),
         );
       }),
     );
+  }
+
+  void scrollToSection(int navIndex) {
+    if (navIndex == 4) {
+      return;
+    }
+    final key = navBarKey[navIndex];
+    Scrollable.ensureVisible(key.currentContext!,
+        duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
   }
 }

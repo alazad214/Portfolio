@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfilio/utils/colors.dart';
+import 'package:my_portfilio/widgets/custom_richText.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/contact_item.dart';
@@ -16,16 +18,11 @@ class Contact_mobile extends StatelessWidget {
         width: screenWidth,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-            color: Colors.black54, borderRadius: BorderRadius.circular(8)),
+            color: AppColor.navy2, borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
-            const Text(
-              'Contact Me',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
+            CustomRichText("Stay", " Connected"),
+
             const SizedBox(height: 20),
             Wrap(
               spacing: 20,

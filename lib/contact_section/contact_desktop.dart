@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:my_portfilio/utils/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../utils/contact_item.dart';
+import '../widgets/custom_richText.dart';
 
 class Contact_desktop extends StatelessWidget {
   const Contact_desktop({
@@ -16,20 +16,14 @@ class Contact_desktop extends StatelessWidget {
     final screenWidth = screenSize.width;
     return Container(
         alignment: Alignment.center,
-        margin: const EdgeInsets.symmetric(horizontal: 80.0),
+        margin: const EdgeInsets.symmetric(horizontal: 90.0),
         width: screenWidth,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-            color: Colors.black54, borderRadius: BorderRadius.circular(8)),
+            color: AppColor.navy2, borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
-            const Text(
-              'Contact Me',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
+            CustomRichText("Stay", " Connected"),
             const SizedBox(height: 20),
             Wrap(
               spacing: 20,

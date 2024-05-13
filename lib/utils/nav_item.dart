@@ -5,16 +5,24 @@ import 'package:my_portfilio/pages/homepage.dart';
 import 'package:my_portfilio/pages/settings_screen.dart';
 import 'package:my_portfilio/user_message/user_message.dart';
 
-List<String> nav_titles = ["Home", "Blog", "Contact", "Settings"];
+List<String> nav_titles = [
+  "Home",
+  "Skills",
+  "Projects",
+  "Contact",
+  "Blog",
+];
 List<IconData> nav_icons = [
   Icons.home,
-  Icons.web,
+  Icons.handyman_rounded,
+  Icons.apps,
   Icons.message_outlined,
-  Icons.settings,
+  Icons.web,
 ];
 List nav_pages = [
   const HomePage(),
   const Blogs_page(),
   UserMessage(),
-  Settings_Screen()
+  Settings_Screen(),
+  Settings_Screen(),
 ];

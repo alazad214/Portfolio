@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/colors.dart';
 import 'header_logo.dart';
 
 class HeaderMobile extends StatelessWidget {
@@ -11,9 +12,9 @@ class HeaderMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 65,
-      padding: const EdgeInsets.only(left: 20, bottom: 0, right: 10, top: 0),
       decoration: BoxDecoration(
-          color: Colors.black54, borderRadius: BorderRadius.circular(8)),
+          color: AppColor.navy2,
+          borderRadius: BorderRadius.circular(8)),
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 900),
         child: Row(

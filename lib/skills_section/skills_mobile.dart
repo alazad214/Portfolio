@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfilio/widgets/custom_richText.dart';
 
+import '../utils/colors.dart';
 import '../utils/platform.dart';
 
 class Skills_Mobile extends StatelessWidget {
@@ -14,18 +16,12 @@ class Skills_Mobile extends StatelessWidget {
         width: screenWidth,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-            color: Colors.black54, borderRadius: BorderRadius.circular(8)),
+            color: AppColor.navy2, borderRadius: BorderRadius.circular(8)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 20),
-            const Text(
-              'Platform',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold),
-            ),
+            CustomRichText("Platform &", " Skills"),
             const SizedBox(height: 20),
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 900),

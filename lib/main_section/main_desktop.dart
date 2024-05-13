@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
+import '../utils/colors.dart';
+
 class MainDesktop extends StatelessWidget {
   const MainDesktop({
     super.key,
@@ -13,11 +15,12 @@ class MainDesktop extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 80.0),
+      margin: const EdgeInsets.symmetric(horizontal: 90),
       height: screenSize.height / 2,
+      width: screenWidth,
       decoration: BoxDecoration(
-          color: Colors.black54, borderRadius: BorderRadius.circular(8)),
-      constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 900),
+          color: AppColor.navy2, borderRadius: BorderRadius.circular(8)),
+      constraints: const BoxConstraints(minHeight: 350.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -28,23 +31,30 @@ class MainDesktop extends StatelessWidget {
                 "Hello, \nI'm Al Azad\nI'm Flutter Developer",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 15),
-              ElevatedButton(
-                onPressed: () async {
+              InkWell(
+                onTap: () async {
                   final Uri url = Uri.parse(
                       "https://drive.google.com/drive/folders/1WYyG-5oWbxWgctSbz1oF8byaAz63f7Hg?usp=sharing");
                   if (!await launchUrl(url)) {
                     throw Exception('Could not launch $url');
                   }
                 },
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.yellow)),
-                child: const Text("Download Resume"),
-              )
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 45,
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: const Text("Download Resume"),
+                ),
+              ),
             ],
           ),
           Image.asset(

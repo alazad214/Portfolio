@@ -11,7 +11,7 @@ class Project_Card extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-      height: 350,
+      height: 300,
       width: 270,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
@@ -39,7 +39,7 @@ class Project_Card extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w800),
+                  color: Colors.amber, fontWeight: FontWeight.w800),
             ),
           ),
           Padding(

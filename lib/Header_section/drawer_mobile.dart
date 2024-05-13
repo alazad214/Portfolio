@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfilio/widgets/others_project.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../utils/colors.dart';
 import '../utils/nav_item.dart';
 
 class DrawerMobile extends StatelessWidget {
-  const DrawerMobile({super.key});
-
+  const DrawerMobile({super.key, required this.onItemTap});
+  final Function(int) onItemTap;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -26,8 +24,7 @@ class DrawerMobile extends StatelessWidget {
         for (int i = 0; i < nav_icons.length; i++)
           InkWell(
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => nav_pages[i]));
+              onItemTap(i);
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 25),
@@ -45,7 +42,6 @@ class DrawerMobile extends StatelessWidget {
               ),
             ),
           ),
-        const OthersProject(),
         const SizedBox(height: 10),
         Container(
           padding: const EdgeInsets.only(left: 30),

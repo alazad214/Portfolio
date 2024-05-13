@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfilio/project_section/project_card.dart';
+import 'package:my_portfilio/utils/colors.dart';
 
 import '../utils/project_item.dart';
-
+import '../widgets/custom_richText.dart';
 
 class Project_mobile extends StatelessWidget {
   const Project_mobile({super.key});
@@ -15,16 +16,11 @@ class Project_mobile extends StatelessWidget {
     return Container(
       width: screenWidth,
       padding: const EdgeInsets.all(20),
-
       decoration: BoxDecoration(
-          color: Colors.black54, borderRadius: BorderRadius.circular(8)),
+          color: AppColor.navy2, borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: [
-          const Text(
-            'Projects',
-            style: TextStyle(
-                color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-          ),
+          CustomRichText("My", " Projects"),
           const SizedBox(height: 20),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 900),
