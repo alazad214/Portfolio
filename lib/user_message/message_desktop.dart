@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfilio/user_message/user_message.dart';
 import 'package:my_portfilio/utils/colors.dart';
-import '../widgets/custom_richText.dart';
-import '../widgets/custom_textfield.dart';
+
 
 class MessageDesktop extends StatelessWidget {
   const MessageDesktop({
