@@ -11,18 +11,18 @@ class Project_Card extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     return Container(
-      height: 300,
+      height: 320,
       width: 270,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-          color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             clipBehavior: Clip.antiAlias,
-            margin: EdgeInsets.all(5),
+            margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
             child: Image.asset(
               project.image,
@@ -39,7 +39,7 @@ class Project_Card extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                  color: Colors.amber, fontWeight: FontWeight.w800),
+                  color: Colors.teal, fontWeight: FontWeight.w800),
             ),
           ),
           Padding(

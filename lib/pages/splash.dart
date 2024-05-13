@@ -14,7 +14,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -31,6 +31,7 @@ class _SplashState extends State<Splash> {
     final screenSize = MediaQuery.of(context).size;
     return LayoutBuilder(builder: (context, constaints) {
       return Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
             child: ListView(
           children: [

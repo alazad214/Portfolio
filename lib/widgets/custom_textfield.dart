@@ -1,50 +1,65 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../controllers/textmessage_controller.dart';
 
 class Custom_TextField extends StatelessWidget {
-  Custom_TextField({super.key});
+  Custom_TextField(
+      {super.key,
+      this.hinttext,
+      this.line,
+      this.width,
+      this.controller,
+      this.onchanged,
+      this.validator});
 
-  final controller = Get.put(Message_Controller());
-  final TextEditingController messagecontroller = TextEditingController();
+  final String? hinttext;
+  final int? line;
+  final double? width;
+  final controller;
+  final onchanged;
+  final validator;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      child: TextField(
-        controller: messagecontroller,
-        maxLines: 1,
-        onChanged: (message) {
-          controller.message.value = message;
-        },
+      width: width,
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      child: TextFormField(
+        controller: controller,
+        validator: validator,
+        style: const TextStyle(color: Colors.white),
+        maxLines: line,
+        onChanged: onchanged,
         decoration: InputDecoration(
-          suffixIcon: IconButton(
-              onPressed: () {
-                if (messagecontroller.text.isNotEmpty) {
-                  controller.SendMessage();
-                  messagecontroller.clear();
-                }
-              },
-              icon: const Icon(
-                Icons.send,
-                color: Colors.blue,
-              )),
-          hintText: "Send message...",
-          filled: true,
+          hintText: hinttext,
+          hintStyle: const TextStyle(color: Colors.white60, fontSize: 20),
+          filled: false,
           fillColor: Colors.white,
           //enable-->
           enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.black,
+              color: Colors.white12,
             ),
           ),
 
           //focus-->
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-                color: Colors.blue,
+                color: Colors.white70,
+                width: 2), // Set border color when the field is focused
+          ),
+
+          errorBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+                color: Colors.red,
+                width: 2), // Set border color when the field is focused
+          ),
+          disabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+                color: Colors.white70,
+                width: 2), // Set border color when the field is focused
+          ),
+          focusedErrorBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+                color: Colors.white70,
                 width: 2), // Set border color when the field is focused
           ),
         ),

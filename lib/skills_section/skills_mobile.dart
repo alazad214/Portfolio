@@ -21,7 +21,7 @@ class Skills_Mobile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 20),
-            CustomRichText("Platform &", " Skills"),
+            CustomRichText("Platform ", ""),
             const SizedBox(height: 20),
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 900),
@@ -66,20 +66,42 @@ class Skills_Mobile extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
-            Flexible(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 900),
-                child: Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: [
-                    for (int i = 0; i < skillItems.length; i++)
-                      Chip(
-                        label: Text(skillItems[i]["title"]),
-                        avatar: Image.asset(skillItems[i]["img"]),
-                      )
-                  ],
-                ),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 850),
+              child: Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                alignment: WrapAlignment.center,
+                children: [
+                  for (int i = 0; i < skillItems.length; i++)
+                    Container(
+                        width: 150,
+                        padding: const EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.blueGrey.shade800,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              skillItems[i]["img"],
+                              width: 25,
+                            ),
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: Text(
+                                skillItems[i]["title"],
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                          ],
+                        ))
+                ],
               ),
             ),
             const SizedBox(height: 20),

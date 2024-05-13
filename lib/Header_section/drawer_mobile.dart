@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfilio/widgets/other_project.dart';
 import '../utils/colors.dart';
 import '../utils/nav_item.dart';
 
@@ -42,7 +43,9 @@ class DrawerMobile extends StatelessWidget {
               ),
             ),
           ),
-        const SizedBox(height: 10),
+
+
+        const OthersProject(),
         Container(
           padding: const EdgeInsets.only(left: 30),
           width: double.maxFinite,

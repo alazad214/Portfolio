@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfilio/user_message/message_desktop.dart';
+import 'package:my_portfilio/user_message/message_mobile.dart';
 import 'package:my_portfilio/utils/colors.dart';
 import 'package:my_portfilio/Header_section/drawer_mobile.dart';
 import 'package:my_portfilio/Header_section/header_desktop.dart';
@@ -13,7 +15,7 @@ import 'package:my_portfilio/project_section/project_desktop.dart';
 import 'package:my_portfilio/project_section/project_mobile.dart';
 import 'package:my_portfilio/skills_section/skills_desktop.dart';
 import 'package:my_portfilio/skills_section/skills_mobile.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(
                     key: navBarKey.first,
-                    height: 20,
+                    height: 30,
                   ),
                   //HEADER===>>
                   if (constaints.maxWidth >= 650)
@@ -105,6 +107,16 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
 
+                  //Message SECTION===>>
+                  Column(
+                    children: [
+                      if (constaints.maxWidth >= 650)
+                        const MessageDesktop()
+                      else
+                        const MessageMobile(),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
                   //CONTACT SECTION===>>
                   Container(
                     key: navBarKey[3],
@@ -131,10 +143,20 @@ class _HomePageState extends State<HomePage> {
 
   void scrollToSection(int navIndex) {
     if (navIndex == 4) {
+      _launchURL();
       return;
     }
     final key = navBarKey[navIndex];
     Scrollable.ensureVisible(key.currentContext!,
         duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+  }
+}
+
+void _launchURL() async {
+  const url = 'https://blogrider.netlify.app/#/minified:G3';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }

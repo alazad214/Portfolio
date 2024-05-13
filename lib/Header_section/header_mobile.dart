@@ -12,9 +12,9 @@ class HeaderMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 65,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-          color: AppColor.navy2,
-          borderRadius: BorderRadius.circular(8)),
+          color: AppColor.navy2, borderRadius: BorderRadius.circular(8)),
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 900),
         child: Row(

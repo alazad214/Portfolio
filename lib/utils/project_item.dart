@@ -34,7 +34,7 @@ List<ProjectUtils> workProjectUtils = [
     subtitle: "This is WhatsApp UI clone project created by Flutter.",
     source: 'https://github.com/alazad214/whatsapp-clone-',
     preview:
-        'https://drive.google.com/drive/folders/15f5lLGETOVfzQ5roz5PD6lwBF4UosWHS?usp=sharing',
+        'https://drive.google.com/drive/folders/11L-_xL8niPsIuusDe5LCthJHAS2AkIMN?usp=sharing',
   ),
 
   //Hotepad_HIVE------------->>>
@@ -56,7 +56,7 @@ List<ProjectUtils> workProjectUtils = [
         'This news application is developed by Flutter. It uses GetX, Rest API etc.',
     source: 'https://github.com/alazad214/NewsApp',
     preview:
-        'https://drive.google.com/drive/folders/1EDTHGj-nHb-Pxk1mmINcULu_Mdt9YZXF?usp=sharing',
+        'https://drive.google.com/drive/folders/10yUDVFhWAhNs3gOh3aX4AEK9zBTQLxpq?usp=sharing',
   ),
 
   //E-COMMERCE APP------------->>>
@@ -67,7 +67,7 @@ List<ProjectUtils> workProjectUtils = [
         'It is a flutter e-commerce app. It uses Firebase Authentication, Database, Firebase storage, Payment Gateway etc.',
     source: 'https://github.com/alazad214/praner-market-e-commerce-',
     preview:
-        'https://drive.google.com/drive/folders/11Jf06l15Dppw3tsK1ujLJjHtCFqVCglg?usp=sharing',
+        'https://drive.google.com/drive/folders/10kFSeU3yPmQ2jeKFC9VFEXO4lwEIrD4Q?usp=sharing',
   ),
   //BLOG APPLICATION------------->>>
   ProjectUtils(
@@ -76,8 +76,7 @@ List<ProjectUtils> workProjectUtils = [
     subtitle:
         'This blog rider application is made responsive. It is built for mobile and web platform.',
     source: 'https://github.com/alazad214/responsive-blog-application',
-    preview:
-        'https://drive.google.com/drive/folders/1vxMPz9P5oGLdttwumMm6E9BfyU_iVK6Q?usp=sharing',
+    preview: 'https://blogrider.netlify.app/#/minified:G3',
   ),
   //WEATHER APP------------->>>
   ProjectUtils(
@@ -87,7 +86,7 @@ List<ProjectUtils> workProjectUtils = [
         'This is a Weather app built by Flutter. It uses GetX, Firebase firestore.',
     source: 'https://github.com/alazad214/weather-project',
     preview:
-        'https://drive.google.com/drive/folders/1vxMPz9P5oGLdttwumMm6E9BfyU_iVK6Q?usp=sharing',
+        'https://drive.google.com/drive/folders/11nvd8StmMuVI9TAALx2ZwdkhvN9uO6RQ?usp=sharing',
   ),
   //CHAT APP------------->>>
   ProjectUtils(
@@ -97,7 +96,7 @@ List<ProjectUtils> workProjectUtils = [
         'It is a chat app build by Flutter. It uses Getx, Firebase authentication, cloud firestore, firebase storage.',
     source: 'https://github.com/alazad214/chatapp',
     preview:
-        'https://drive.google.com/drive/folders/1dGHoAdh8RG3g149z74eWa4XXMDE_pjCB?usp=sharing',
+        'https://drive.google.com/drive/folders/11UgvCa2xiI1yqxUuA_gc05lelODIGlWG?usp=sharing',
   ),
 
   //Quez APP------------>>>
@@ -107,6 +106,6 @@ List<ProjectUtils> workProjectUtils = [
     subtitle: 'This is a quiz app built by Flutter.',
     source: 'https://github.com/alazad214/quiz-app',
     preview:
-        'https://drive.google.com/drive/folders/1XiRM0ipQ06XRPlgPexacv6x5V2mleHeJ?usp=sharing',
+        'https://drive.google.com/drive/folders/11YrNRbTTttOUSRBSm3BqcVfjcIejHWTm?usp=sharing',
   ),
 ];
